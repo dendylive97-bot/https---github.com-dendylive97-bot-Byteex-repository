@@ -158,3 +158,55 @@ main {
     padding-top: 80px;
 }
 
+.partners {
+    width: 100%;
+    max-width: 430px;
+    margin-top: 14px;
+}
+
+.partners-window {
+    width: 100%;
+    overflow: hidden;
+}
+
+.partners-track {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.partners-track img {
+    width: 33.333%;
+    height: 38px;
+    flex: 0 0 33.333%;
+    object-fit: contain;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+.partners-dots {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 14px;
+}
+
+.partners-dots button {
+    width: 9px;
+    height: 9px;
+    border: none;
+    border-radius: 50%;
+    background-color: #CFCFCF;
+    cursor: pointer;
+}
+
+.partners-dots button.active {
+    background-color: #000000;
+}
+
+.sloganMain {
+    color: #01005B;
+    font-size: 25px;
+    line-height: 1.45;
+    text-align: center;
+    margin-top: 24px;
+}
