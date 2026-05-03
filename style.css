@@ -29,6 +29,13 @@ body {
     height: 36px;
     font-size: 11px;
 }
+.desktop-text {
+    display: none; /* Ховаємо довгий текст на телефонах */
+}
+.hero-content {
+    text-align: center; /* Центруємо на мобільних */
+    padding: 20px;
+}
 
 .logo {
     display: flex;
@@ -931,4 +938,220 @@ footer {
     height: auto;           /* Зберігає пропорції */
     display: block;
 }
+
+@media (min-width: 1024px) {
+  .mobile-text {
+        display: none; /* Ховаємо короткий текст на ПК */
+    }
+    
+    .desktop-text {
+        display: block; /* Показуємо довгий текст */
+        font-weight: bold;
+        letter-spacing: 1px; /* На ПК можна додати трохи стилю */
+    }
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 106px;
+        text-align: left;
+        gap: 36px;
+    }
+    .hero-title {
+        text-align: left;
+        margin-top: 0;
+    }
+
+
+
+    .hero-section {
+        flex-direction: row-reverse;       /* Ставимо картинку і текст в один ряд */
+        justify-content: space-between; /* Розсуваємо їх по сторонах */
+        align-items: center;       /* Вирівнюємо по центру по вертикалі */
+        
+        padding: 0 106px;          /* Відступи по 106px зліва і справа */
+        gap: 50px;                 /* Відступ між картинкою і блоком тексту */
+        box-sizing: border-box;    /* Щоб padding не розширював сайт за межі екрана */
+    }
+
+    .hero-image {
+        flex: 1;                   /* Картинка займає половину простору */
+        max-width: 50%;            /* Обмежуємо, щоб не була надто великою */
+    }
+
+    .features {
+        flex: 1;                   /* Текстовий блок займає іншу половину */
+        display: flex;
+        flex-direction: column;    /* Елементи списку всередині залишаються один під одним */
+        gap: 20px;                 /* Відступи між пунктами списку */
+    }
+    .Jane {
+        display: flex;
+        justify-content: left;
+        margin-left: 55px;
+    }
+    main {
+        /* Замінюємо картинку на десктопну */
+        background-image: url('images/pcgradient.png');
+        
+        /* Додаткові налаштування для ПК */
+        background-attachment: fixed; /* Можна додати ефект, щоб фон не рухався при скролі */
+    }
+    .partners {
+        max-width: 100%;      /* Знімаємо обмеження 430px */
+        margin-top: 40px;     /* Можна збільшити відступ на ПК */
+        padding: 0 106px;     /* Вирівнюємо по тій же лінії, що й інші блоки */
+        box-sizing: border-box;
+    }
+
+    .partners-track {
+        transform: none !important; /* Скасовуємо JS-зсув */
+        justify-content: space-between; /* Розставляємо лого рівномірно */
+        gap: 20px;
+    }
+
+    .partners-track img {
+        width: auto;          /* Скасовуємо фіксовану ширину 33% */
+        flex: 0 1 auto;       /* Дозволяємо логотипам займати їхній природний розмір */
+        height: 50px;         /* На ПК логотипи можна зробити трохи більшими */
+    }
+
+    .partners-dots {
+        display: none;        /* Ховаємо точки пагінації, вони не потрібні на ПК */
+    }
+    
+   .sloganMain {
+        /* 1. Вирівнюємо сам блок, якщо батько — Flexbox */
+        align-self: flex-start !important; 
+        
+        /* 2. Вирівнюємо текст всередині блоку */
+        text-align: left !important;
+        
+        /* 3. Встановлюємо відступ */
+        margin-left: 106px !important;
+        margin-right: 0 !important;
+        
+        /* 4. Прибираємо обмеження ширини, якщо вони були */
+        max-width: none !important;
+        width: auto !important;
+        margin-top: 60px !important; /* Залишаємо відступ зверху */
+    }
+
+    .sloganMain br {
+        display: none !important;
+    }
+
+
+
+
+    .product-gallery{
+        display: flex;
+        flex-direction: row-reverse;
+         /* 1. Розштовхуємо блоки по краях */
+        justify-content: space-between; 
+        
+        /* 2. Відступи від країв вікна браузера */
+        padding: 0 106px; 
+        
+        /* 3. Обов'язково, щоб padding не розширював сайт за межі екрана */
+        box-sizing: border-box; 
+        
+        /* 4. Знімаємо обмеження ширини з мобільної версії */
+        max-width: 100% !important; 
+        width: 100%;
+        
+        /* 5. Відступ між колонками, щоб вони не злипалися, якщо тексту багато */
+        gap: 60px; 
+        
+        
+         
+    }
+    .photo-selector-new{}
+    .product-info{
+
+        
+    }
+    .product-info-item {
+        border-bottom: none !important; /* Прибирає лінію */
+        padding-bottom: 0 !important;   /* Прибирає зайвий відступ, який був над лінією */
+        margin-bottom: 30px !important; /* Налаштовує відстань між пунктами на свій смак */
+         display: grid !important;
+        /* Перша колонка під іконку (наприклад, 60px), друга — під текст */
+        grid-template-columns: 60px 1fr; 
+        /* Вирівнюємо іконку по верхньому краю текстового блоку */
+        align-items: start !important;
+        text-align: left !important;
+        gap: 15px; /* Відступ між іконкою та текстом */
+        
+        border-bottom: none !important; /* Прибираємо лінію для ПК */
+        padding-bottom: 20px !important;
+        margin-bottom: 20px !important;
+    }
+    .product-info-icon {
+        grid-column: 1;
+        grid-row: 1 / span 2; /* Займає простір навпроти h3 та p */
+        margin: 0 !important;
+    }
+    .product-info-item h3 {
+        grid-column: 2;
+        margin: 0 0 5px 0 !important; /* Відступ тільки знизу до тексту */
+        font-size: 18px;
+    }
+
+    /* Текст у другу колонку, другий рядок */
+    .product-info-item p {
+        grid-column: 2;
+        margin: 0 !important;
+        max-width: 100% !important;
+        font-size: 15px;
+    }
+    
+    /* Прибираємо перенос рядка в заголовку на ПК */
+    .product-info-item h3 br {
+        display: none;
+    }
+
+     .secondMain {
+        display: grid !important;
+        /* Створюємо дві рівні колонки */
+        grid-template-columns: 1fr 1fr; 
+        padding: 80px 106px !important;
+        gap: 10px !important;
+        align-items: start;
+    }
+
+    /* Відправляємо картинку в першу колонку (зліва) */
+    .modelColath {
+        grid-column: 1;
+        grid-row: 1 / span 20; /* Займає місце на всю висоту тексту */
+        order: 1 !important;   /* Візуально ставимо першою */
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Відправляємо заголовок у другу колонку (справа) */
+    .secondSlogan {
+        grid-column: 2;
+        order: 2 !important;
+        text-align: left !important;
+        margin: 0 0 20px 0 !important;
+    }
+
+    /* Відправляємо всі параграфи тексту у другу колонку (справа) */
+    .secondMainText {
+        grid-column: 2;
+        order: 3 !important;
+        text-align: left !important;
+        margin-bottom: 10px !important;
+        margin-top: 0 !important;
+        max-width: 100% !important;
+        line-height: 1.4 !important;
+        
+    }
+
+
+
+
+
+
 
