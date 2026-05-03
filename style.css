@@ -413,3 +413,207 @@ main {
     margin-top: 20px;
     
 }
+
+.modelColath {
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+    display: block;
+}
+
+.thirdSlogan {
+    color: #01005B;
+        font-size: 25px;
+        line-height: 1.45;
+        text-align: center;
+        margin-top: 24px;
+        padding-bottom: 30px;
+
+
+}
+
+.thirdMain {
+    margin-top: 60px;
+    background-color: #white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 24px 0;
+    width: 100%;
+}
+
+/* Основна секція */
+.ourBest {
+    width: 100%;
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+/* Контейнер зі стрілками та слайдером */
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Відступи: мін 10px, макс 200px (адаптивно) */
+    padding: 0 clamp(10px, 15vw, 200px); 
+    gap: 30px;
+}
+
+/* Область, де лежать слайди */
+.slides-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Контейнер одного слайда */
+.slide-item {
+    display: none; /* Сховано за замовчуванням */
+    position: relative; /* База для абсолютних елементів всередині */
+    width: 346px;
+    height: 321px;
+    border-radius: 12px;
+    overflow: hidden; /* Щоб картинка не вилазила за краї */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Центруємо текст по вертикалі */
+    text-align: center;
+    animation: fade 0.5s ease-in-out;
+}
+
+/* Активний слайд */
+.slide-item.active {
+    display: flex;
+}
+
+/* Картинка як ФОН */
+.slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Заповнює область без деформації */
+    z-index: 1; /* Найнижчий шар */
+}
+
+/* Контент ПОВЕРХ картинки */
+.slide-content {
+    position: relative;
+    z-index: 2; /* Шар над картинкою */
+    padding: 20px;
+    /* Напівпрозорий фон для читабельності тексту (можна видалити) */
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(4px); /* Легке розмиття фону під текстом */
+    width: 80%;
+    border-radius: 10px;
+}
+
+.slide-icon {
+    width: 45px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.slide-title {
+    color: #0047AB; /* Синій заголовок */
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+
+.slide-text {
+    color: gray; /* Білий текст краще видно на фото */
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Кнопки-стрілки */
+.arrow-btn {
+    background: none;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s, transform 0.2s;
+    user-select: none;
+    padding: 0 15px;
+}
+
+.arrow-btn:hover {
+    color: #0047AB;
+    transform: scale(1.1);
+}
+
+/* Адаптивність */
+@media (max-width: 1024px) {
+    .slider-wrapper {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .slider-wrapper {
+        padding: 0 10px;
+        gap: 10px;
+    }
+    .slide-item {
+        width: 300px; /* Трохи менше для мобільних */
+        height: 280px;
+    }
+    .arrow-btn {
+        font-size: 35px;
+    }
+}
+
+/* Анімація появи */
+@keyframes fade {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Контейнер для центрування */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрує все по горизонталі */
+    gap: 10px;           /* Відступ між кнопкою та текстом */
+}
+
+/* Стиль кнопки */
+.custom-btn {
+    background-color: #000080; /* Темно-синій колір */
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.custom-btn:hover {
+    background-color: #000066;
+}
+
+/* Блок відгуків */
+.reviews-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #888; /* Сірий колір тексту */
+}
+
+/* Колір зірочок */
+.stars {
+    color: #FFB800; /* Золотистий колір */
+    font-size: 16px;
+    letter-spacing: 2px;
+}
