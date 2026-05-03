@@ -15,6 +15,7 @@
 }
 
 body {
+
    
 }
 
@@ -27,6 +28,13 @@ body {
     width: 100%;
     height: 36px;
     font-size: 11px;
+}
+.desktop-text {
+    display: none; /* Ховаємо довгий текст на телефонах */
+}
+.hero-content {
+    text-align: center; /* Центруємо на мобільних */
+    padding: 20px;
 }
 
 .logo {
@@ -412,4 +420,1044 @@ main {
     line-height: 1.45;
     margin-top: 20px;
     
+}
+
+.modelColath {
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+    display: block;
+}
+
+.thirdSlogan {
+    color: #01005B;
+        font-size: 25px;
+        line-height: 1.45;
+        text-align: center;
+        margin-top: 24px;
+        padding-bottom: 30px;
+
+
+}
+
+.thirdMain {
+    margin-top: 60px;
+    background-color: #white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 24px 0;
+    width: 100%;
+}
+
+/* Основна секція */
+.ourBest {
+    width: 100%;
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+/* Контейнер зі стрілками та слайдером */
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Відступи: мін 10px, макс 200px (адаптивно) */
+    padding: 0 clamp(10px, 15vw, 200px); 
+    gap: 30px;
+}
+
+/* Область, де лежать слайди */
+.slides-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Контейнер одного слайда */
+.slide-item {
+    display: none; /* Сховано за замовчуванням */
+    position: relative; /* База для абсолютних елементів всередині */
+    width: 346px;
+    height: 321px;
+    border-radius: 12px;
+    overflow: hidden; /* Щоб картинка не вилазила за краї */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Центруємо текст по вертикалі */
+    text-align: center;
+    animation: fade 0.5s ease-in-out;
+}
+
+/* Активний слайд */
+.slide-item.active {
+    display: flex;
+}
+
+/* Картинка як ФОН */
+.slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Заповнює область без деформації */
+    z-index: 1; /* Найнижчий шар */
+}
+
+/* Контент ПОВЕРХ картинки */
+.slide-content {
+    position: relative;
+    z-index: 2; /* Шар над картинкою */
+    padding: 20px;
+    /* Напівпрозорий фон для читабельності тексту (можна видалити) */
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(4px); /* Легке розмиття фону під текстом */
+    width: 80%;
+    border-radius: 10px;
+}
+
+.slide-icon {
+    width: 45px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.slide-title {
+    color: #0047AB; /* Синій заголовок */
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+
+.slide-text {
+    color: gray; /* Білий текст краще видно на фото */
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Кнопки-стрілки */
+.arrow-btn {
+    background: none;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s, transform 0.2s;
+    user-select: none;
+    padding: 0 15px;
+}
+
+.arrow-btn:hover {
+    color: #0047AB;
+    transform: scale(1.1);
+}
+
+
+
+/* Анімація появи */
+@keyframes fade {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Контейнер для центрування */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрує все по горизонталі */
+    gap: 10px; 
+    
+    margin-bottom: 20px; /* Відступ між кнопкою та текстом */
+}
+
+/* Стиль кнопки */
+.custom-btn {
+    background-color: #000080; /* Темно-синій колір */
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.custom-btn:hover {
+    background-color: #000066;
+}
+
+/* Блок відгуків */
+.reviews-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #888; /* Сірий колір тексту */
+}
+
+/* Колір зірочок */
+.stars {
+    color: #FFB800; /* Золотистий колір */
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.fans-section {
+    width: 100%;
+    /* Ваші стандартні відступи від країв */
+    padding: 60px clamp(10px, 5vw, 106px); 
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.fans-title {
+    color: #00004d;
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: 15px;
+}
+
+.fans-subtitle {
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+/* Сітка: завжди 4 колонки = 2 ряди для 8 фото */
+.fans-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    /* Мінімальний відступ між фото, щоб вони здавались суцільним полотном */
+    gap: 10px; 
+    width: 100%;
+}
+.desktop-only-images {
+    display: none; /* Ховаємо зайві 14 картинок на телефонах */
+}
+
+.fans-grid img {
+    width: 100%;
+    /* Робимо фото ідеальними квадратами */
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    display: block;
+}
+
+/* Налаштування для мобільних (щоб фото не були занадто дрібними) */
+@media (max-width: 480px) {
+    .fans-grid {
+        /* Якщо на 4 колонки занадто дрібно, можна лишити 4, 
+           але зазвичай на мобільних 4 в ряд виглядають як іконки */
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 5px; /* Зменшуємо проміжок на мобільних */
+    }
+    
+    .fans-section {
+        padding: 40px 10px; /* Мінімальні відступи на мобільних */
+    }
+}
+
+
+
+.reviews-slider {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.reviews-container {
+    width: 350px; /* Ширина картки відгуку */
+    height: auto;
+}
+
+.review-card {
+    display: none; /* Ховаємо всі */
+    background: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* М'яка тінь */
+    animation: fadeIn 0.5s ease;
+}
+
+.review-card.active {
+    display: block; /* Показуємо активну */
+}
+
+.review-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Стрілочки */
+.rev-arrow {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.rev-arrow:hover { color: #0047AB; }
+
+/* Точки */
+.rev-dots {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+}
+
+.rev-dot {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.rev-dot.active {
+    background: #000; /* Чорна точка для активного відгуку */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+footer {
+    width: 100%;
+    box-sizing: border-box; /* Важливо, щоб відступи не розширювали футер */
+    margon: 0;
+    padding: 0;
+    /* clamp(мінімум, гнучке значення, максимум) */
+
+}
+.bottom-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+.footer-faq {
+    width: 100%;
+    padding: 40px clamp(10px, 5vw, 106px); /* Ваші відступи */
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.accordion-container {
+    max-width: 800px; /* Можна змінити під вашу ширину */
+    margin: 10px;
+    margin-bottom: 40px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #e0e0e0; /* Тонка лінія розділювач */
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    color: #00004d; /* Темно-синій колір */
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out; /* Плавне розгортання */
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 200px; /* Приблизна висота розгорнутого тексту */
+}
+
+.accordion-content p {
+    padding-bottom: 20px;
+    color: #666;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.acc-icon {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+
+
+
+.green-impact {
+    margin-top: 60px;
+    background-color: #F0EEEF; /* Ваш колір фону */
+    
+    
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.impact-main-title {
+    padding-top: 40px;
+    color: #00004d; /* Темно-синій колір */
+    font-size: clamp(24px, 4vw, 36px);
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.impact-container {
+    max-width: 600px; /* Обмеження ширини для вигляду як на фото */
+    margin: 0 auto;
+}
+
+.impact-item {
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Кружальце навколо іконки (якщо потрібно як на фото) */
+.impact-icon-wrapper {
+    background-color: #e2e0e1; /* Трохи темніший сірий для кола */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.impact-icon {
+    width: 35px;
+    height: auto;
+}
+
+.impact-number {
+    color: #00004d;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.impact-desc {
+    color: #444;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Тонкі лінії розділювачі */
+.impact-line {
+    border: 0;
+    border-top: 1px solid #d1d1d1;
+    width: 100%;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+.footer-final-cta {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Вибудовує елементи в стовпчик */
+    align-items: center;    /* Центрує текст і картинку по горизонталі */
+    text-align: center;
+    padding-top: 40px;      /* Відступ над текстом */
+}
+
+.cta-content {
+    /* Ваші відступи від країв для тексту */
+    padding: 0 clamp(10px, 5vw, 106px);
+    margin-bottom: 30px;    /* Відступ між текстом і картинкою */
+}
+
+.cta-title {
+    color: #00004d;
+    font-size: clamp(28px, 5vw, 48px);
+    margin-bottom: 10px;
+}
+
+.cta-subtitle {
+    color: #555;
+    font-size: clamp(16px, 2vw, 20px);
+}
+
+.cta-image {
+    width: 100%;            /* Картинка розтягується на всю ширину */
+    max-width: 1440px;      /* Можна обмежити максимальну ширину */
+    height: auto;           /* Зберігає пропорції */
+    display: block;
+}
+.footerimg {
+    display: none; /* Ховаємо картинку на телефонах */
+}
+
+.desktop-only {
+    display: none !important;
+}
+
+.desktop-text {
+    display: none; /* Ховаємо довгий текст на телефонах */
+}
+
+.cta-section {
+    position: relative; /* Робимо секцію базою для позиціонування */
+    width: 100%;
+    display: block;
+}
+
+.cta-image {
+    width: 100%;
+    height: auto;
+    display: block; /* Прибирає зайвий відступ знизу картинки */
+}
+
+.button-container {
+    position: absolute; /* Кнопка тепер "літає" над картинкою */
+    bottom: 40px;       /* Відступ від нижнього краю картинки */
+    left: 50%;          /* Ставимо по центру по горизонталі */
+    transform: translateX(-50%); /* Точне центрування */
+    
+    text-align: center;
+    width: 100%;        /* Щоб внутрішнє центрування працювало */
+    z-index: 10;        /* Щоб кнопка була поверх усіх шарів */
+}
+
+/* Стилі для reviews-info, щоб текст був читабельним на фоні фото */
+.reviews-text {
+    display: block;
+    color: white; /* Або інший колір, який видно на вашій картинці */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* Додає читабельності */
+}
+
+.payment-methods {
+    display: none;
+}
+.cta-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1024px) {
+  .mobile-text {
+        display: none; /* Ховаємо короткий текст на ПК */
+    }
+    
+    .desktop-text {
+        display: block; /* Показуємо довгий текст */
+        font-weight: bold;
+        letter-spacing: 1px; /* На ПК можна додати трохи стилю */
+    }
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 106px;
+        text-align: left;
+        gap: 36px;
+    }
+    .hero-title {
+        text-align: left;
+        margin-top: 0;
+    }
+
+
+
+    .hero-section {
+        flex-direction: row-reverse;       /* Ставимо картинку і текст в один ряд */
+        justify-content: space-between; /* Розсуваємо їх по сторонах */
+        align-items: center;       /* Вирівнюємо по центру по вертикалі */
+        
+        padding: 0 106px;          /* Відступи по 106px зліва і справа */
+        gap: 50px;                 /* Відступ між картинкою і блоком тексту */
+        box-sizing: border-box;    /* Щоб padding не розширював сайт за межі екрана */
+    }
+
+    .hero-image {
+        flex: 1;                   /* Картинка займає половину простору */
+        max-width: 50%;            /* Обмежуємо, щоб не була надто великою */
+    }
+
+    .features {
+        flex: 1;                   /* Текстовий блок займає іншу половину */
+        display: flex;
+        flex-direction: column;    /* Елементи списку всередині залишаються один під одним */
+        gap: 20px;                 /* Відступи між пунктами списку */
+    }
+    .Jane {
+        display: flex;
+        justify-content: left;
+        margin-left: 55px;
+    }
+    main {
+        /* Замінюємо картинку на десктопну */
+        background-image: url('images/pcgradient.png');
+        
+        /* Додаткові налаштування для ПК */
+        background-attachment: fixed; /* Можна додати ефект, щоб фон не рухався при скролі */
+    }
+    .partners {
+        max-width: 100%;      /* Знімаємо обмеження 430px */
+        margin-top: 40px;     /* Можна збільшити відступ на ПК */
+        padding: 0 106px;     /* Вирівнюємо по тій же лінії, що й інші блоки */
+        box-sizing: border-box;
+    }
+
+    .partners-track {
+        transform: none !important; /* Скасовуємо JS-зсув */
+        justify-content: space-between; /* Розставляємо лого рівномірно */
+        gap: 20px;
+    }
+
+    .partners-track img {
+        width: auto;          /* Скасовуємо фіксовану ширину 33% */
+        flex: 0 1 auto;       /* Дозволяємо логотипам займати їхній природний розмір */
+        height: 50px;         /* На ПК логотипи можна зробити трохи більшими */
+    }
+
+    .partners-dots {
+        display: none;        /* Ховаємо точки пагінації, вони не потрібні на ПК */
+    }
+    
+   .sloganMain {
+        /* 1. Вирівнюємо сам блок, якщо батько — Flexbox */
+        align-self: flex-start !important; 
+        
+        /* 2. Вирівнюємо текст всередині блоку */
+        text-align: left !important;
+        
+        /* 3. Встановлюємо відступ */
+        margin-left: 106px !important;
+        margin-right: 0 !important;
+        
+        /* 4. Прибираємо обмеження ширини, якщо вони були */
+        max-width: none !important;
+        width: auto !important;
+        margin-top: 60px !important; /* Залишаємо відступ зверху */
+    }
+
+    .sloganMain br {
+        display: none !important;
+    }
+
+
+
+
+    .product-gallery{
+        display: flex;
+        flex-direction: row-reverse;
+         /* 1. Розштовхуємо блоки по краях */
+        justify-content: space-between; 
+        
+        /* 2. Відступи від країв вікна браузера */
+        padding: 0 106px; 
+        
+        /* 3. Обов'язково, щоб padding не розширював сайт за межі екрана */
+        box-sizing: border-box; 
+        
+        /* 4. Знімаємо обмеження ширини з мобільної версії */
+        max-width: 100% !important; 
+        width: 100%;
+        
+        /* 5. Відступ між колонками, щоб вони не злипалися, якщо тексту багато */
+        gap: 60px; 
+        
+        
+         
+    }
+    
+    .product-info-item {
+        border-bottom: none !important; /* Прибирає лінію */
+        padding-bottom: 0 !important;   /* Прибирає зайвий відступ, який був над лінією */
+        margin-bottom: 30px !important; /* Налаштовує відстань між пунктами на свій смак */
+         display: grid !important;
+        /* Перша колонка під іконку (наприклад, 60px), друга — під текст */
+        grid-template-columns: 60px 1fr; 
+        /* Вирівнюємо іконку по верхньому краю текстового блоку */
+        align-items: start !important;
+        text-align: left !important;
+        gap: 15px; /* Відступ між іконкою та текстом */
+        
+        border-bottom: none !important; /* Прибираємо лінію для ПК */
+        padding-bottom: 20px !important;
+        margin-bottom: 20px !important;
+    }
+    .product-info-icon {
+        grid-column: 1;
+        grid-row: 1 / span 2; /* Займає простір навпроти h3 та p */
+        margin: 0 !important;
+    }
+    .product-info-item h3 {
+        grid-column: 2;
+        margin: 0 0 5px 0 !important; /* Відступ тільки знизу до тексту */
+        font-size: 18px;
+    }
+
+    /* Текст у другу колонку, другий рядок */
+    .product-info-item p {
+        grid-column: 2;
+        margin: 0 !important;
+        max-width: 100% !important;
+        font-size: 15px;
+    }
+    
+    /* Прибираємо перенос рядка в заголовку на ПК */
+    .product-info-item h3 br {
+        display: none;
+    }
+
+     .secondMain {
+        display: grid !important;
+        /* Створюємо дві рівні колонки */
+        grid-template-columns: 1fr 1fr; 
+        padding: 80px 106px !important;
+        gap: 10px !important;
+        align-items: start;
+    }
+
+    /* Відправляємо картинку в першу колонку (зліва) */
+    .modelColath {
+        grid-column: 1;
+        grid-row: 1 / span 20; /* Займає місце на всю висоту тексту */
+        order: 1 !important;   /* Візуально ставимо першою */
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Відправляємо заголовок у другу колонку (справа) */
+    .secondSlogan {
+        grid-column: 2;
+        order: 2 !important;
+        text-align: left !important;
+        margin: 0 0 20px 0 !important;
+    }
+
+    /* Відправляємо всі параграфи тексту у другу колонку (справа) */
+    .secondMainText {
+        grid-column: 2;
+        order: 3 !important;
+        text-align: left !important;
+        margin-bottom: 10px !important;
+        margin-top: 0 !important;
+        max-width: 100% !important;
+        line-height: 1.4 !important;
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /* 1. Робимо контейнер гнучким рядком */
+    .slides-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        gap: 30px; /* Відстань між картками */
+        padding: 0 106px; /* Ваш стандартний відступ */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* 2. Робимо кожен слайд видимим і однаковим за шириною */
+    .slide-item {
+        display: flex !important; /* Робимо всі слайди видимими */
+        flex-direction: column; /* Контент всередині картки (текст над фото) */
+        flex: 1; /* Кожна картка займає рівну частину місця */
+        opacity: 1 !important; /* Якщо JS приховував їх через прозорість */
+        visibility: visible !important;
+    }
+
+    /* 3. Ховаємо стрілки слайдера, бо на ПК вони більше не потрібні */
+    .arrow-btn {
+        display: none !important;
+    }
+
+    /* 4. Налаштовуємо картинки всередині карток */
+    .slide-img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px; /* Опціонально, для гарного вигляду */
+        order: 2; /* Картинка під текстом */
+    }
+
+    .slide-content {
+        order: 1; /* Текст над картинкою */
+        text-align: сenter; /* Центруємо текст всередині картки */
+        margin-bottom: 20px;
+    }
+
+    /* Якщо JS додавав стилі для трансформації, скидаємо їх */
+    .slides-container {
+        transform: none !important;
+    }
+    .fans-grid {
+        display: grid !important;
+        /* Робимо, наприклад, 6 колонок у ряд */
+        grid-template-columns: repeat(11, 1fr); 
+        gap: 15px; /* Відступи між фото */
+        
+    }
+
+    /* Показуємо блок з додатковими картинками */
+    .desktop-only-images {
+        display: contents; /* Ця властивість дозволяє картинкам всередині div 
+                              стати частиною сітки .fans-grid напряму */
+    }
+
+    .fans-grid img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px; /* Опціонально */
+    }
+
+    .fans-title, .fans-subtitle {
+        text-align: center;
+        padding: 0 106px;
+    }
+
+
+
+
+     .reviews-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 30px; /* Відстань між відгуками */
+        width: 100%;
+        overflow: visible !important; /* Щоб бачити всі картки */
+    }
+
+    /* 2. Показуємо всі картки одночасно */
+    .review-card {
+        display: block !important; /* Скасовуємо приховування від JS */
+        flex: 1;
+        max-width: 350px; /* Обмежуємо ширину, щоб не були занадто широкими */
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important; /* Скасовуємо JS-анімації зсуву */
+    }
+
+    /* 3. Центруємо обгортку зі стрілками */
+    .reviews-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 106px; /* Ваш стандартний відступ */
+    }
+
+    /* 4. Налаштовуємо картинки відгуків */
+    .review-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* 5. Ховаємо точки, якщо 3 відгуки — це максимум і гортати нікуди */
+    .rev-dots {
+        display: none !important;
+    }
+
+    /* Якщо хочете, щоб стрілки були з боків від усього ряду */
+    .rev-arrow {
+        position: static !important; /* Виймаємо з абсолютного позиціонування */
+        transform: none !important;
+    }
+
+    .secondSlogan{
+        
+        br {
+            display: none !important;
+        }
+    }
+
+    .footer {
+        /* Відступи: 0 зверху/знизу, 106px зліва/справа */
+        padding-left: 106px !important;
+        padding-right: 106px !important;
+        
+        /* Важливо: щоб padding не додавався до ширини 100% */
+        box-sizing: border-box !important;
+        
+        /* Якщо контент у футері має бути на всю ширину між цими відступами */
+        width: 100%;
+        
+        /* Якщо у футері є flex-контейнер, можна додати: */
+        display: flex;
+        justify-content: space-between; 
+        align-items: start;
+    }
+    
+    .faq-section {
+        display: flex;
+        gap: 40px; /* Відстань між текстом і картинкою */
+        padding: 40px 106px !important; /* Ваші стандартні відступи */
+        box-sizing: border-box;
+    }
+    .faq-content {
+        flex: 1; /* Текст займає половину простору */
+    }
+
+    .footerimg {
+        display: block !important; /* Показуємо картинку на ПК */
+    }
+
+    .footerbuttom {
+        display: none !important; /* Ховаємо кнопку на ПК, якщо вона там не потрібна */
+    }
+
+    .desktop-only {
+        /* Міняємо none на те, що потрібно для структури (flex або block) */
+        display: flex !important; 
+    }
+
+    .impact-container {
+        display: flex !important;
+        flex-direction: row !important; /* Елементи йдуть зліва направо */
+        align-items: center !important; /* Вирівнюємо центри іконок і ліній */
+        justify-content: center !important;
+        gap: 40px !important; /* Відстань між контентом і лініями */
+    }
+
+     .impact-item {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        min-width: fit-content;
+    }
+    .impact-line {
+        display: block !important;
+        width: 1px !important;      /* Робимо лінію тонкою (вертикальною) */
+        height: 160px !important;    /* Задаємо висоту риски */
+        background-color: #E5E5E5 !important;
+        border: none !important;
+        flex-shrink: 0;             /* Щоб лінія не зникала при звуженні екрана */
+    }
+
+    .mobile-text {
+        display: none !important; /* Ховаємо короткий текст на ПК */
+    }
+    
+    .desktop-text {
+        display: block !important; /* Показуємо довгий текст */
+        
+        color: gray;
+    }
+     .button-container {
+        /* Контейнер вже має position: absolute і bottom з минулого кроку */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Відстань між кнопкою, зірками та картами */
+    }
+
+
+    .hide-on-pc {
+        display: none !important;
+    }
+
+    .cta-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+   .pay-descktop-text {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    
+    
+   }
+
+   .pay-descktop-text img {
+    width: 100%;    
+    height: 100%;    
+    margin-top: 50px;
+    
+   }
+
+ 
+
+    
+ 
+
+   
+
+
+
+
+
+
+
+
+
+
+
 }
