@@ -68,3 +68,48 @@ function changeSlide(direction) {
     currentIndex = (currentIndex + direction + slides.length) % slides.length;
     slides[currentIndex].classList.add('active');
 }
+
+
+let revIndex = 0;
+const revSlides = document.querySelectorAll('.review-card');
+const revDots = document.querySelectorAll('.rev-dot');
+
+function showReview(n) {
+    revSlides[revIndex].classList.remove('active');
+    revDots[revIndex].classList.remove('active');
+    
+    revIndex = (n + revSlides.length) % revSlides.length;
+    
+    revSlides[revIndex].classList.add('active');
+    revDots[revIndex].classList.add('active');
+}
+
+function moveReview(step) {
+    showReview(revIndex + step);
+}
+
+function setReview(index) {
+    showReview(index);
+}
+
+
+
+function toggleAccordion(element) {
+    const item = element.parentElement;
+    const icon = element.querySelector('.acc-icon');
+    
+    // Перевіряємо, чи цей елемент вже активний
+    const isActive = item.classList.contains('active');
+    
+    // Закриваємо всі відкриті елементи (опціонально)
+    document.querySelectorAll('.accordion-item').forEach(el => {
+        el.classList.remove('active');
+        el.querySelector('.acc-icon').textContent = '+';
+    });
+
+    // Якщо натиснутий не був активним — відкриваємо його
+    if (!isActive) {
+        item.classList.add('active');
+        icon.textContent = '−';
+    }
+}

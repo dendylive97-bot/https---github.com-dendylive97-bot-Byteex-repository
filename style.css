@@ -15,6 +15,7 @@
 }
 
 body {
+
    
 }
 
@@ -580,7 +581,9 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center; /* Центрує все по горизонталі */
-    gap: 10px;           /* Відступ між кнопкою та текстом */
+    gap: 10px; 
+    
+    margin-bottom: 20px; /* Відступ між кнопкою та текстом */
 }
 
 /* Стиль кнопки */
@@ -617,3 +620,315 @@ main {
     font-size: 16px;
     letter-spacing: 2px;
 }
+
+.fans-section {
+    width: 100%;
+    /* Ваші стандартні відступи від країв */
+    padding: 60px clamp(10px, 5vw, 106px); 
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.fans-title {
+    color: #00004d;
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: 15px;
+}
+
+.fans-subtitle {
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+/* Сітка: завжди 4 колонки = 2 ряди для 8 фото */
+.fans-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    /* Мінімальний відступ між фото, щоб вони здавались суцільним полотном */
+    gap: 10px; 
+    width: 100%;
+}
+
+.fans-grid img {
+    width: 100%;
+    /* Робимо фото ідеальними квадратами */
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    display: block;
+}
+
+/* Налаштування для мобільних (щоб фото не були занадто дрібними) */
+@media (max-width: 480px) {
+    .fans-grid {
+        /* Якщо на 4 колонки занадто дрібно, можна лишити 4, 
+           але зазвичай на мобільних 4 в ряд виглядають як іконки */
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 5px; /* Зменшуємо проміжок на мобільних */
+    }
+    
+    .fans-section {
+        padding: 40px 10px; /* Мінімальні відступи на мобільних */
+    }
+}
+
+
+
+.reviews-slider {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.reviews-container {
+    width: 350px; /* Ширина картки відгуку */
+    height: auto;
+}
+
+.review-card {
+    display: none; /* Ховаємо всі */
+    background: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* М'яка тінь */
+    animation: fadeIn 0.5s ease;
+}
+
+.review-card.active {
+    display: block; /* Показуємо активну */
+}
+
+.review-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Стрілочки */
+.rev-arrow {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.rev-arrow:hover { color: #0047AB; }
+
+/* Точки */
+.rev-dots {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+}
+
+.rev-dot {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.rev-dot.active {
+    background: #000; /* Чорна точка для активного відгуку */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+footer {
+    width: 100%;
+    box-sizing: border-box; /* Важливо, щоб відступи не розширювали футер */
+    margon: 0;
+    padding: 0;
+    /* clamp(мінімум, гнучке значення, максимум) */
+
+}
+
+
+
+
+.footer-faq {
+    width: 100%;
+    padding: 40px clamp(10px, 5vw, 106px); /* Ваші відступи */
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.accordion-container {
+    max-width: 800px; /* Можна змінити під вашу ширину */
+    margin: 10px;
+    margin-bottom: 40px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #e0e0e0; /* Тонка лінія розділювач */
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    color: #00004d; /* Темно-синій колір */
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out; /* Плавне розгортання */
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 200px; /* Приблизна висота розгорнутого тексту */
+}
+
+.accordion-content p {
+    padding-bottom: 20px;
+    color: #666;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.acc-icon {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+
+
+
+.green-impact {
+    margin-top: 60px;
+    background-color: #F0EEEF; /* Ваш колір фону */
+    
+    
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.impact-main-title {
+    padding-top: 40px;
+    color: #00004d; /* Темно-синій колір */
+    font-size: clamp(24px, 4vw, 36px);
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.impact-container {
+    max-width: 600px; /* Обмеження ширини для вигляду як на фото */
+    margin: 0 auto;
+}
+
+.impact-item {
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Кружальце навколо іконки (якщо потрібно як на фото) */
+.impact-icon-wrapper {
+    background-color: #e2e0e1; /* Трохи темніший сірий для кола */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.impact-icon {
+    width: 35px;
+    height: auto;
+}
+
+.impact-number {
+    color: #00004d;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.impact-desc {
+    color: #444;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Тонкі лінії розділювачі */
+.impact-line {
+    border: 0;
+    border-top: 1px solid #d1d1d1;
+    width: 100%;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+.footer-final-cta {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Вибудовує елементи в стовпчик */
+    align-items: center;    /* Центрує текст і картинку по горизонталі */
+    text-align: center;
+    padding-top: 40px;      /* Відступ над текстом */
+}
+
+.cta-content {
+    /* Ваші відступи від країв для тексту */
+    padding: 0 clamp(10px, 5vw, 106px);
+    margin-bottom: 30px;    /* Відступ між текстом і картинкою */
+}
+
+.cta-title {
+    color: #00004d;
+    font-size: clamp(28px, 5vw, 48px);
+    margin-bottom: 10px;
+}
+
+.cta-subtitle {
+    color: #555;
+    font-size: clamp(16px, 2vw, 20px);
+}
+
+.cta-image {
+    width: 100%;            /* Картинка розтягується на всю ширину */
+    max-width: 1440px;      /* Можна обмежити максимальну ширину */
+    height: auto;           /* Зберігає пропорції */
+    display: block;
+}
+
