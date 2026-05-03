@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="topLine">
     <!-- Текст для мобільних -->
@@ -284,6 +285,22 @@
         <img src="images/r6.png" alt="Fan 6">
         <img src="images/r7.png" alt="Fan 7">
         <img src="images/r8.png" alt="Fan 8">
+        <div class="desktop-only-images">
+            <img src="images/r9.png" alt="Fan 9">
+            <img src="images/r10.png" alt="Fan 10">
+            <img src="images/r11.png" alt="Fan 11">
+            <img src="images/r12.png" alt="Fan 12">
+            <img src="images/r13.png" alt="Fan 13">
+            <img src="images/r14.png" alt="Fan 14">
+            <img src="images/r15.png" alt="Fan 15">
+            <img src="images/r16.png" alt="Fan 16">
+            <img src="images/r17.png" alt="Fan 17">
+            <img src="images/r18.png" alt="Fan 18">
+            <img src="images/r19.png" alt="Fan 19">
+            <img src="images/r20.png" alt="Fan 20">
+            <img src="images/r21.png" alt="Fan 21">
+            <img src="images/r22.png" alt="Fan 22">
+        </div>
     </div>
 </section>
 
@@ -334,13 +351,16 @@
 </div>
 
 
-    <p class="secondSlogan">frequently asked<br>questions.</p>
+    
 
 
 
 
     </main>
     <footer>
+    <section class="faq-section">
+            <div class="faq-content">   
+        <p class="secondSlogan">Frequently asked<br>questions.</p>
     <div class="accordion-container">
         <!-- Елемент 1 (Розгорнутий за замовчуванням) -->
         <div class="accordion-item active">
@@ -374,7 +394,7 @@
                 <p>Додатковий текст для третього розділу.</p>
             </div>
         </div>
-        <!-- Елемент 3 -->
+        <!-- Елемент 4 -->
         <div class="accordion-item">
             <div class="accordion-header" onclick="toggleAccordion(this)">
                 <span>lorem ipsum dolor sit amet</span>
@@ -384,7 +404,7 @@
                 <p>Додатковий текст для третього розділу.</p>
             </div>
         </div>
-        <!-- Елемент 3 -->
+        <!-- Елемент 5 -->
         <div class="accordion-item">
             <div class="accordion-header" onclick="toggleAccordion(this)">
                 <span>lorem ipsum dolor sit amet</span>
@@ -394,7 +414,7 @@
                 <p>Додатковий текст для третього розділу.</p>
             </div>
         </div>
-        <!-- Елемент 3 -->
+        <!-- Елемент 6 -->
         <div class="accordion-item">
             <div class="accordion-header" onclick="toggleAccordion(this)">
                 <span>lorem ipsum dolor sit amet</span>
@@ -404,59 +424,13 @@
                 <p>Додатковий текст для третього розділу.</p>
             </div>
         </div>
-        <!-- Елемент 3 -->
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>lorem ipsum dolor sit amet</span>
-                <span class="acc-icon">+</span>
-            </div>
-            <div class="accordion-content">
-                <p>Додатковий текст для третього розділу.</p>
-            </div>
-        </div>
-        <!-- Елемент 3 -->
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>lorem ipsum dolor sit amet</span>
-                <span class="acc-icon">+</span>
-            </div>
-            <div class="accordion-content">
-                <p>Додатковий текст для третього розділу.</p>
-            </div>
-        </div>
-        <!-- Елемент 3 -->
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>lorem ipsum dolor sit amet</span>
-                <span class="acc-icon">+</span>
-            </div>
-            <div class="accordion-content">
-                <p>Додатковий текст для третього розділу.</p>
-            </div>
-        </div>
-        <!-- Елемент 3 -->
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>lorem ipsum dolor sit amet</span>
-                <span class="acc-icon">+</span>
-            </div>
-            <div class="accordion-content">
-                <p>Додатковий текст для третього розділу.</p>
-            </div>
-        </div>
-        <!-- Елемент 3 -->
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>lorem ipsum dolor sit amet</span>
-                <span class="acc-icon">+</span>
-            </div>
-            <div class="accordion-content">
-                <p>Додатковий текст для третього розділу.</p>
-            </div>
-        </div>
+
     </div>
+            </div>
+     <img src="images/footerimg.png" alt="footerimg" class="footerimg">    
+    </section>
 
-
+<section class="footerbuttom">
     <div class="button-container">
     <button class="custom-btn">
         Customize Your Outfit <span>&rarr;</span>
@@ -466,6 +440,7 @@
         <span class="reviews-text">Over 500+ 5 Star Reviews Online</span>
     </div>
 </div>
+</section>
 
 
 
@@ -473,8 +448,6 @@
     <h2 class="impact-main-title">Our Total Green Impact</h2>
     
     <div class="impact-container">
-        <hr class="impact-line">
-        
         <!-- Блок CO2 -->
         <div class="impact-item">
             <div class="impact-icon-wrapper">
@@ -484,7 +457,7 @@
             <p class="impact-desc">of CO2 saved</p>
         </div>
 
-        <hr class="impact-line">
+        <div class="impact-line"></div> <!-- ЛІНІЯ ЯК ОКРЕМИЙ БЛОК -->
 
         <!-- Блок Води -->
         <div class="impact-item">
@@ -495,9 +468,19 @@
             <p class="impact-desc">of drinking water saved</p>
         </div>
 
-        <hr class="impact-line">
+        <div class="impact-line"></div> <!-- ЛІНІЯ ЯК ОКРЕМИЙ БЛОК -->
+
+<!-- Блок Електрики (з'явиться тільки на ПК) -->
+<div class="impact-item desktop-only">
+    <div class="impact-icon-wrapper">
+        <img src="images/elect.png" alt="Energy saved" class="impact-icon">
+    </div>
+    <p class="impact-number">7,321 kWh</p>
+    <p class="impact-desc">of energy saved</p>
+</div>
     </div>
 </section>
+
 
 
 
@@ -505,21 +488,33 @@
 <section class="footer-final-cta">
     <div class="cta-content">
         <h2 class="cta-title">Find something you love.</h2>
-        <p class="cta-subtitle">Click below to browse our collection!</p>
+        <p class="cta-subtitle mobile-text">Click below to browse our collection!</p>
+        <p class="cta-subtitle desktop-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien<br>facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat.</p>
     </div>
     
     <!-- Картинка тепер йде ПІСЛЯ тексту -->
+<section class="cta-section">
     <img src="images/footerback.png" alt="Collection" class="cta-image">
+    
     <div class="button-container">
-    <button class="custom-btn">
-        Customize Your Outfit <span>&rarr;</span>
-    </button>
-    <div class="reviews-info">
-        <span class="stars">★★★★★</span>
-        <span class="reviews-text">Over 500+ 5 Star Reviews Online</span>
+        <button class="custom-btn">
+            Customize Your Outfit <span>&rarr;</span>
+        </button>
+        <div class="reviews-info">
+            <span class="stars">★★★★★</span>
+            <span class="reviews-text">Over 500+ 5 Star Reviews Online</span>
+        </div>
+
+        <!-- Новий блок з іконками для ПК -->
+        <div class="payment-methods">
+            <img src="images/visa.png" alt="Visa">
+            <img src="images/visa2.png" alt="Visa 2">
+        </div>
     </div>
-</div>
 </section>
+</section>
+
+
 
 
     

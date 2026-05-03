@@ -556,26 +556,7 @@ main {
     transform: scale(1.1);
 }
 
-/* Адаптивність */
-@media (max-width: 1024px) {
-    .slider-wrapper {
-        padding: 0 50px;
-    }
-}
 
-@media (max-width: 600px) {
-    .slider-wrapper {
-        padding: 0 10px;
-        gap: 10px;
-    }
-    .slide-item {
-        width: 300px; /* Трохи менше для мобільних */
-        height: 280px;
-    }
-    .arrow-btn {
-        font-size: 35px;
-    }
-}
 
 /* Анімація появи */
 @keyframes fade {
@@ -657,6 +638,9 @@ main {
     /* Мінімальний відступ між фото, щоб вони здавались суцільним полотном */
     gap: 10px; 
     width: 100%;
+}
+.desktop-only-images {
+    display: none; /* Ховаємо зайві 14 картинок на телефонах */
 }
 
 .fans-grid img {
@@ -938,6 +922,52 @@ footer {
     height: auto;           /* Зберігає пропорції */
     display: block;
 }
+.footerimg {
+    display: none; /* Ховаємо картинку на телефонах */
+}
+
+.desktop-only {
+    display: none !important;
+}
+
+.desktop-text {
+    display: none; /* Ховаємо довгий текст на телефонах */
+}
+
+.cta-section {
+    position: relative; /* Робимо секцію базою для позиціонування */
+    width: 100%;
+    display: block;
+}
+
+.cta-image {
+    width: 100%;
+    height: auto;
+    display: block; /* Прибирає зайвий відступ знизу картинки */
+}
+
+.button-container {
+    position: absolute; /* Кнопка тепер "літає" над картинкою */
+    bottom: 40px;       /* Відступ від нижнього краю картинки */
+    left: 50%;          /* Ставимо по центру по горизонталі */
+    transform: translateX(-50%); /* Точне центрування */
+    
+    text-align: center;
+    width: 100%;        /* Щоб внутрішнє центрування працювало */
+    z-index: 10;        /* Щоб кнопка була поверх усіх шарів */
+}
+
+/* Стилі для reviews-info, щоб текст був читабельним на фоні фото */
+.reviews-text {
+    display: block;
+    color: white; /* Або інший колір, який видно на вашій картинці */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* Додає читабельності */
+}
+
+.payment-methods {
+    display: none;
+}
+
 
 @media (min-width: 1024px) {
   .mobile-text {
@@ -1155,3 +1185,261 @@ footer {
 
 
 
+
+
+
+
+
+    /* 1. Робимо контейнер гнучким рядком */
+    .slides-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        gap: 30px; /* Відстань між картками */
+        padding: 0 106px; /* Ваш стандартний відступ */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* 2. Робимо кожен слайд видимим і однаковим за шириною */
+    .slide-item {
+        display: flex !important; /* Робимо всі слайди видимими */
+        flex-direction: column; /* Контент всередині картки (текст над фото) */
+        flex: 1; /* Кожна картка займає рівну частину місця */
+        opacity: 1 !important; /* Якщо JS приховував їх через прозорість */
+        visibility: visible !important;
+    }
+
+    /* 3. Ховаємо стрілки слайдера, бо на ПК вони більше не потрібні */
+    .arrow-btn {
+        display: none !important;
+    }
+
+    /* 4. Налаштовуємо картинки всередині карток */
+    .slide-img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px; /* Опціонально, для гарного вигляду */
+        order: 2; /* Картинка під текстом */
+    }
+
+    .slide-content {
+        order: 1; /* Текст над картинкою */
+        text-align: сenter; /* Центруємо текст всередині картки */
+        margin-bottom: 20px;
+    }
+
+    /* Якщо JS додавав стилі для трансформації, скидаємо їх */
+    .slides-container {
+        transform: none !important;
+    }
+    .fans-grid {
+        display: grid !important;
+        /* Робимо, наприклад, 6 колонок у ряд */
+        grid-template-columns: repeat(11, 1fr); 
+        gap: 15px; /* Відступи між фото */
+        
+    }
+
+    /* Показуємо блок з додатковими картинками */
+    .desktop-only-images {
+        display: contents; /* Ця властивість дозволяє картинкам всередині div 
+                              стати частиною сітки .fans-grid напряму */
+    }
+
+    .fans-grid img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px; /* Опціонально */
+    }
+
+    .fans-title, .fans-subtitle {
+        text-align: center;
+        padding: 0 106px;
+    }
+
+
+
+
+     .reviews-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 30px; /* Відстань між відгуками */
+        width: 100%;
+        overflow: visible !important; /* Щоб бачити всі картки */
+    }
+
+    /* 2. Показуємо всі картки одночасно */
+    .review-card {
+        display: block !important; /* Скасовуємо приховування від JS */
+        flex: 1;
+        max-width: 350px; /* Обмежуємо ширину, щоб не були занадто широкими */
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important; /* Скасовуємо JS-анімації зсуву */
+    }
+
+    /* 3. Центруємо обгортку зі стрілками */
+    .reviews-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 106px; /* Ваш стандартний відступ */
+    }
+
+    /* 4. Налаштовуємо картинки відгуків */
+    .review-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* 5. Ховаємо точки, якщо 3 відгуки — це максимум і гортати нікуди */
+    .rev-dots {
+        display: none !important;
+    }
+
+    /* Якщо хочете, щоб стрілки були з боків від усього ряду */
+    .rev-arrow {
+        position: static !important; /* Виймаємо з абсолютного позиціонування */
+        transform: none !important;
+    }
+
+    .secondSlogan{
+        
+        br {
+            display: none !important;
+        }
+    }
+
+    .footer {
+        /* Відступи: 0 зверху/знизу, 106px зліва/справа */
+        padding-left: 106px !important;
+        padding-right: 106px !important;
+        
+        /* Важливо: щоб padding не додавався до ширини 100% */
+        box-sizing: border-box !important;
+        
+        /* Якщо контент у футері має бути на всю ширину між цими відступами */
+        width: 100%;
+        
+        /* Якщо у футері є flex-контейнер, можна додати: */
+        display: flex;
+        justify-content: space-between; 
+        align-items: start;
+    }
+    
+    .faq-section {
+        display: flex;
+        gap: 40px; /* Відстань між текстом і картинкою */
+        padding: 40px 106px !important; /* Ваші стандартні відступи */
+        box-sizing: border-box;
+    }
+    .faq-content {
+        flex: 1; /* Текст займає половину простору */
+    }
+
+    .footerimg {
+        display: block !important; /* Показуємо картинку на ПК */
+    }
+
+    .footerbuttom {
+        display: none !important; /* Ховаємо кнопку на ПК, якщо вона там не потрібна */
+    }
+
+    .desktop-only {
+        /* Міняємо none на те, що потрібно для структури (flex або block) */
+        display: flex !important; 
+    }
+
+    .impact-container {
+        display: flex !important;
+        flex-direction: row !important; /* Елементи йдуть зліва направо */
+        align-items: center !important; /* Вирівнюємо центри іконок і ліній */
+        justify-content: center !important;
+        gap: 40px !important; /* Відстань між контентом і лініями */
+    }
+
+     .impact-item {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        min-width: fit-content;
+    }
+    .impact-line {
+        display: block !important;
+        width: 1px !important;      /* Робимо лінію тонкою (вертикальною) */
+        height: 160px !important;    /* Задаємо висоту риски */
+        background-color: #E5E5E5 !important;
+        border: none !important;
+        flex-shrink: 0;             /* Щоб лінія не зникала при звуженні екрана */
+    }
+
+    .mobile-text {
+        display: none !important; /* Ховаємо короткий текст на ПК */
+    }
+    
+    .desktop-text {
+        display: block !important; /* Показуємо довгий текст */
+        
+        color: gray;
+    }
+     .button-container {
+        /* Контейнер вже має position: absolute і bottom з минулого кроку */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Відстань між кнопкою, зірками та картами */
+    }
+
+    .payment-methods {
+        display: flex !important; /* Показуємо на ПК */
+        flex-direction: column; /* Відправляємо іконки в стовпець */
+        justify-content: center;
+        gap: 20px; /* Відстань між самими картками Visa */
+        margin-top: 60px;
+        width: 100%; /* Займають всю ширину контейнера, але зберігають пропорції */
+        padding: 0 106px; /* Відступи від країв */
+        box-sizing: border-box;
+    
+    }
+
+   
+
+    .cta-section {
+        position: relative;
+        width: 100%;
+        max-width: 100% !important; 
+        margin-left: 0 !important;   /* Скидаємо відступ 106px, якщо він тут був */
+        margin-right: 0 !important;
+        display: block;
+    }
+    .cta-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto; /* Центрування самої картинки */
+    }
+
+ 
+
+ 
+    
+    
+    
+
+   
+
+
+
+
+
+
+
+
+
+
+
+}
