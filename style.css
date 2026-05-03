@@ -755,6 +755,11 @@ footer {
     /* clamp(мінімум, гнучке значення, максимум) */
 
 }
+.bottom-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 
 
@@ -967,6 +972,28 @@ footer {
 .payment-methods {
     display: none;
 }
+.cta-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (min-width: 1024px) {
@@ -1096,11 +1123,7 @@ footer {
         
          
     }
-    .photo-selector-new{}
-    .product-info{
-
-        
-    }
+    
     .product-info-item {
         border-bottom: none !important; /* Прибирає лінію */
         padding-bottom: 0 !important;   /* Прибирає зайвий відступ, який був над лінією */
@@ -1394,41 +1417,36 @@ footer {
         gap: 15px; /* Відстань між кнопкою, зірками та картами */
     }
 
-    .payment-methods {
-        display: flex !important; /* Показуємо на ПК */
-        flex-direction: column; /* Відправляємо іконки в стовпець */
-        justify-content: center;
-        gap: 20px; /* Відстань між самими картками Visa */
-        margin-top: 60px;
-        width: 100%; /* Займають всю ширину контейнера, але зберігають пропорції */
-        padding: 0 106px; /* Відступи від країв */
-        box-sizing: border-box;
-    
-    }
 
-   
+    .hide-on-pc {
+        display: none !important;
+    }
 
     .cta-section {
-        position: relative;
-        width: 100%;
-        max-width: 100% !important; 
-        margin-left: 0 !important;   /* Скидаємо відступ 106px, якщо він тут був */
-        margin-right: 0 !important;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-    .cta-image {
-        width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto; /* Центрування самої картинки */
-    }
+   .pay-descktop-text {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    
+    
+   }
+
+   .pay-descktop-text img {
+    width: 100%;    
+    height: 100%;    
+    margin-top: 50px;
+    
+   }
 
  
 
+    
  
-    
-    
-    
 
    
 
